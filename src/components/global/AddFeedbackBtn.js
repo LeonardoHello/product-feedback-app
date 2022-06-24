@@ -5,7 +5,7 @@ import { close } from '../../redux/arrowSlice';
 const AddFeedbackBtn = () => {
   const dispatch = useDispatch();
   return (
-    <Link to={"/"}>
+    <Link to={"/create-feedback"}>
       <button className='add_feedback_btn' onClick={() => dispatch(close())}>+ Add Feedback</button>  
     </Link>
   )
