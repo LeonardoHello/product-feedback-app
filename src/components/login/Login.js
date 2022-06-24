@@ -40,7 +40,7 @@ const Login = () => {
 			<SignUpSuggestions name='Or Log In Using' />
 			<div className="signup_suggestion">
 				<p>Don't Have An Account?</p>
-				<Link to={'/product-feedback-app/signup'}>
+				<Link to={'/signup'}>
 					<p>SIGN UP</p>
 				</Link>
 			</div>

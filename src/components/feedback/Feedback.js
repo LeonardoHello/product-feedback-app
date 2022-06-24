@@ -51,7 +51,7 @@ const Feedback = ({ id, title, detail, category, upvotes, comments, feedbackUid 
 				<AddFeedbackBtn/>
 			</div>
 			<FeedbackCollection title={title} detail={detail} category={category} upvotes={upvotes} comments={comments} id={id} >
-				<Link to={'/product-feedback-app'}>
+				<Link to={'/'}>
 					<span className={`material-symbols-outlined ${auth.currentUser.uid !== feedbackUid ? 'display_none' : null}`} onClick={deletingFeedback}>close</span>
 				</Link>
 			</FeedbackCollection>

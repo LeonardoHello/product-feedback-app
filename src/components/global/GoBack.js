@@ -5,7 +5,7 @@ import { close } from '../../redux/arrowSlice';
 const GoBack = () => {
   const dispatch = useDispatch();
   return (
-    <Link to={'/product-feedback-app'}>
+    <Link to={'/'}>
       <button id="back" onClick={() => dispatch(close())}>
         <span id="left_arrow" className="material-symbols-outlined">chevron_left</span>
         <h3>Go Back</h3>

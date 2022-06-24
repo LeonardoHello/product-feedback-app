@@ -27,7 +27,7 @@ const FeedbackCollection = ({ title, detail, category, upvotes, comments, id, ch
 					<span className="material-symbols-outlined">thumb_up</span>
 					<p>{upvotes}</p>
 				</div>
-				<Link to={`/product-feedback-app/feedback/${id}`}>
+				<Link to={`/feedback/${id}`}>
 					<div className="comments">
 						<span className="material-symbols-outlined">comment</span>
 						<p>{comments}</p>

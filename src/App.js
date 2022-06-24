@@ -48,15 +48,15 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/product-feedback-app/login" element={JSON.parse(user) === null ? <Login/> : <Navigate to={'/product-feedback-app'}/>}/>
+      <Route path="/login" element={JSON.parse(user) === null ? <Login/> : <Navigate to={'/'}/>}/>
 
-      <Route path="/product-feedback-app/signup" element={JSON.parse(user) === null ? <Signup/> : <Navigate to={'/product-feedback-app'}/>}/>
+      <Route path="/signup" element={JSON.parse(user) === null ? <Signup/> : <Navigate to={'/'}/>}/>
 
-      <Route path="/product-feedback-app" element={JSON.parse(user) !== null ? <Home categories={categories} sortDropdownList={sortDropdownList} /> : <Navigate to={'/product-feedback-app/login'}/>}/>
+      <Route path="/" element={JSON.parse(user) !== null ? <Home categories={categories} sortDropdownList={sortDropdownList} /> : <Navigate to={'/login'}/>}/>
 
-      <Route path="/product-feedback-app/create-feedback" element={JSON.parse(user) !== null ? <CreateFeedback categories={categories.slice(1)} formText={formText} /> : <Navigate to={'/product-feedback-app/login'}/>}/>
+      <Route path="/create-feedback" element={JSON.parse(user) !== null ? <CreateFeedback categories={categories.slice(1)} formText={formText} /> : <Navigate to={'/login'}/>}/>
 
-      {feedback.map((elem, index) => <Route key={index} path={`/product-feedback-app/feedback/${elem.id}`} element={JSON.parse(user) === null ? <Login/> : <Feedback feedbackUid={elem.feedbackUid} id={elem.id} title={elem.title} detail={elem.detail} category={elem.category} upvotes={elem.upvotes} comments={elem.comments}/>}/>)}
+      {feedback.map((elem, index) => <Route key={index} path={`/feedback/${elem.id}`} element={JSON.parse(user) === null ? <Login/> : <Feedback feedbackUid={elem.feedbackUid} id={elem.id} title={elem.title} detail={elem.detail} category={elem.category} upvotes={elem.upvotes} comments={elem.comments}/>}/>)}
     </Routes>
   )
 }

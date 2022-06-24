@@ -81,12 +81,12 @@ const CreateNewFeedback = ({ categories, formText }) => {
 					</FillOutForm>
 					<menu>
 						<li>
-							<Link to={'/product-feedback-app'}>
+							<Link to={'/'}>
 								<button className="add_feedback_btn" type='reset' onClick={creatingFeedback} >Add Feedback</button>
 							</Link>
 						</li>
 						<li>
-							<Link to={'/product-feedback-app'}>
+							<Link to={'/'}>
 								<button className="add_feedback_btn backgroundColor_gray" type='reset' onClick={() => dispatch(close())} >Cancel</button>
 							</Link>
 						</li>
