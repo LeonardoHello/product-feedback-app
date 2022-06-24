@@ -1,0 +1,165 @@
+.feedback {
+	width: min(40rem, 100%);
+	background-color: white;
+	gap: 1.5rem;
+	padding: 2.5rem;
+	border-radius: 1rem;
+}
+
+.delete_feedback {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.feedback .delete_feedback > h3 {
+	font-size: 1.4rem;
+	color: #3a4374;
+}
+
+.feedback > p {
+	font-size: 1.4rem;
+	color: #647196;
+	line-height: 1.25em;
+}
+
+.feedback > span {
+	background-color: #f2f4ff;
+	border-radius: 1rem;
+	padding: .7em 1.1em;
+	color: #4661e6;
+	font-weight: 600;
+	font-size: 1.3rem;
+	cursor: pointer;
+	width: fit-content;
+}
+
+.stats {
+	justify-content: space-between;
+}
+
+.stats, .comments, .upvotes {
+	display: flex;
+	align-items: center;
+	gap: .75rem;
+}
+
+.stats span {
+	font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+	font-size: 2rem;
+	user-select: none;
+}
+
+.upvotes, .comments {
+	background-color: #f2f4ff;
+	border-radius: 1rem;
+	padding: .6em 1.1em;
+	cursor: pointer;
+}
+
+.upvotes span {
+  color: #4661e6;
+}
+
+.comments span {
+	color: rgb(205, 210, 238);
+}
+
+.stats p {
+	font-weight: 700;
+}
+
+#feedback_comments {
+	align-items: center;
+	padding: 4rem 2rem;
+	gap: 2rem;
+}
+
+#feedback_comments > * {
+	width: min(40rem, 100%);
+}
+
+#edit_feedback {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+}
+
+#comment_section {
+	gap: 3rem;
+	background-color: white;
+	padding: 2.5rem;
+	border-radius: 1rem;
+}
+
+#comment_section p {
+	line-height: 1.25em;
+}
+
+#comment_section h2, #feedback_comments > form h2 {
+	font-size: 1.8rem;
+	color: #3a4374;
+}
+
+#feedback_comments > form {
+	background-color: white;
+	padding: 2.5rem;
+	border-radius: 1rem;
+	gap: 2rem;
+}
+
+#posting_comment {
+	gap: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.comment {
+	gap: 1rem;
+}
+
+.comment figure {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.comment img {
+	aspect-ratio: 1/1;
+	object-fit:cover;
+	width: 4.8rem;
+	border-radius: 50%;
+}
+
+.comment ul {
+	gap: .25rem;
+}
+
+.comment li:first-of-type {
+	font-size: 1.5rem;
+	color: #3a4374;
+	font-weight: 700;
+}
+
+.comment li:last-of-type, .comment p {
+	font-size: 1.4rem;
+	color: #647196;
+}
+
+.comment figcaption {
+	align-items: center;
+	justify-content: center;
+}
+
+.comment span {
+	text-align: right;
+	cursor: pointer;
+}
+
+.user_info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

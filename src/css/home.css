@@ -1,0 +1,140 @@
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	padding: 2rem;
+	color: white;
+	background-image: url('/src/images/rectangle.png');
+	background-size: cover;
+	z-index: 999;
+}
+
+header ul {
+	gap: .8rem;
+}
+
+header ul li:first-of-type {
+	font-size: 1.6rem;
+	font-weight: 700;
+}
+
+header ul li:last-of-type {
+	font-size: 1.4rem;
+	font-weight: 500;
+}
+
+#menu_icon {
+	font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 48;
+	font-size: 3rem;
+	line-height: .8em;
+	cursor: pointer;
+}
+
+#menu_popup {
+	position: absolute;
+	flex-direction: column;
+	top: 100%;
+	right: 0;
+	max-width: 27rem;
+	background-color: #f2f4ff;
+	padding: 2.4rem;
+	border-radius: 0 0 0 1rem;
+	gap: 2rem;
+	align-items: flex-end;
+}
+
+header menu {
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: .8rem;
+	row-gap: 1.3rem;
+	background-color: white;
+	padding: 2.4rem;
+	border-radius: 1rem;
+}
+
+header menu:not(header menu:first-of-type) {
+	padding: 1.6rem;
+}
+
+header menu > * {
+	background-color: #f2f4ff;
+	border-radius: 1rem;
+	padding: .7em 1.1em;
+	color: #4661e6;
+	font-weight: 600;
+	font-size: 1.3rem;
+	cursor: pointer;
+}
+
+#main_header {
+	color: white;
+	display: flex;
+	align-items: center;
+	background-color: #373f68;
+	justify-content: space-around;
+	padding: 1rem 2rem;
+	position: relative;
+	gap: 2rem;
+}
+
+main {
+	background-color: #f2f4ff;
+	min-height: 100vh;
+}
+
+#sort {
+	display: flex;
+	align-items: center;
+	gap: .6rem;
+	cursor: pointer;
+}
+
+#sort p:nth-of-type(2) {
+	font-weight: 600;
+}
+
+#home_arrow {
+	font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+	font-size: 1.8rem;
+	line-height: .6em;
+	height: .4em;
+}
+
+#delete {
+	color: red;
+	background-color: #fff2f2;
+}
+
+#feedback_collection {
+	padding: 3rem 2rem;
+	gap: 2rem;
+	align-items: center;
+	min-height: 100%;
+}
+
+#empty_collection {
+	width: min(35rem, 100%);
+	padding: 8rem 2.5rem;
+	align-items: center;
+	gap: 5rem;
+}
+
+#empty_collection > div {
+	align-items: center;
+	gap: 2rem;
+}
+
+#empty_collection h2 {
+	text-align: center;
+	font-size: 1.8rem;
+	color: #3a4374;
+}
+
+#empty_collection p {
+	text-align: center;
+	line-height: 1.5em;
+	color: #647196;
+}

@@ -1,0 +1,119 @@
+.login {
+	place-self: center;
+	align-items: center;
+	gap: 4rem;
+	padding: 4rem;
+	width: min(100%, 35rem);
+	border-radius: 1rem;
+	background-color: white;
+}
+
+.login h1 {
+	font-size: 3.5rem;
+	font-weight: 600;
+	color: #333333;
+}
+
+.login form {
+	gap: 2rem;
+	width: 100%;
+}
+
+.login form p {
+	text-align: right;
+}
+
+.login form a {
+	width: 100%;
+}
+
+.input {
+	gap: .8rem;
+}
+
+.credentials {
+	display: flex;
+	border-bottom: 1px solid #b4b2af;
+	min-width: fit-content;
+}
+
+.credentials label {
+	display: flex;
+}
+
+.login_icons {
+	font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 48;
+	font-size: 1.7rem;
+	padding: .6em 1em;
+	color: #b4b2af;
+}
+
+.credentials input {
+	border: unset;
+	outline: unset;
+	font-size: 1.4rem;
+	flex-grow: 2;
+}
+
+.credentials input::placeholder {
+	color: #b4b2af;
+}
+
+#forgot_password {
+	text-align: right;
+}
+
+.login form button {
+	width: 100%;
+	font-weight: 500;
+	font-size: 1.4rem;
+	border-radius: 3rem;
+	padding: .7em 0;
+	color: white;
+	background: linear-gradient(-140deg,#e84d70,#a337f6 50%,#28a7ed);
+}
+
+.signup_suggestion {
+	align-items: center;
+	gap: 2rem;
+}
+
+.signup_suggestion p {
+	font-size: 1.3rem;
+	color: #666666;
+}
+
+.signup_suggestion menu {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+}
+
+.facebook, .google, .github {
+	aspect-ratio: 1/1;
+	font-size: 2rem;
+	padding: .45em;
+	border-radius: 50%;
+	color: white;
+}
+
+.facebook {
+	background-color: #3b5998;
+}
+
+.google {
+	background-color: #ea4335;
+}
+
+.github {
+	background-color: #333333;
+}
+
+path {
+	pointer-events: none;
+}
+
+.error {
+	color: red;
+	font-weight: 600;
+}
