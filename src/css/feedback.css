@@ -86,6 +86,10 @@
 	gap: 2rem;
 }
 
+#edit_feedback_btn {
+	background-color: #4661e6;
+}
+
 #comment_section {
 	gap: 3rem;
 	background-color: white;
@@ -129,7 +133,7 @@
 .comment img {
 	aspect-ratio: 1/1;
 	object-fit:cover;
-	width: 4.8rem;
+	width: 4rem;
 	border-radius: 50%;
 }
 
@@ -138,14 +142,19 @@
 }
 
 .comment li:first-of-type {
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	color: #3a4374;
 	font-weight: 700;
 }
 
-.comment li:last-of-type, .comment p {
-	font-size: 1.4rem;
+.comment li:last-of-type {
+	font-size: 1.3rem;
 	color: #647196;
+}
+
+.comment p {
+	color: #647196;
+	font-size: 1.4rem;
 }
 
 .comment figcaption {
@@ -163,3 +172,4 @@
 	align-items: center;
 	justify-content: space-between;
 }
+

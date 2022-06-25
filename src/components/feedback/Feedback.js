@@ -2,12 +2,11 @@ import { Link } from "react-router-dom";
 import FeedbackCollection from "./FeedbackCollection";
 import GoBack from "../global/GoBack";
 import Comment from "./Comment";
-import AddFeedbackBtn from "../global/AddFeedbackBtn";
 import { useState, useEffect } from "react";
-import { auth, db, collection, onSnapshot, doc, deleteDoc, addDoc, updateDoc, Timestamp, query, orderBy } from "../../firebase";
-import "../../css/feedback.css"
+import { auth, db, collection, onSnapshot, doc, addDoc, updateDoc, deleteDoc, Timestamp, query, orderBy } from "../../firebase";
+import "../../css/feedback.css";
 
-const Feedback = ({ id, title, detail, category, upvotes, comments, feedbackUid }) => {
+const Feedback = ({ feedbackUid, id, title, detail, category, upvotes, comments }) => {
 	const [charCount, setCharCount] = useState(250);
 	const [message, setMessage] = useState('');
 	const [commentSection, setCommentSection] = useState([])
@@ -40,21 +39,16 @@ const Feedback = ({ id, title, detail, category, upvotes, comments, feedbackUid 
 		setCharCount(250 - e.currentTarget.value.length);
 		setMessage(e.currentTarget.value);
 	}
-
-	const deletingFeedback = async () => {
-		await deleteDoc(doc(db, "feedback", id));
-	}
 	return (
 		<div id="feedback_comments">
 			<div id="edit_feedback">
-				<GoBack/>
-				<AddFeedbackBtn/>
+				<GoBack path={'/'}/>
+				{feedbackUid === auth.currentUser.uid ? 
+					<Link to={`/feedback/${id}/edit`}>
+						<button id="edit_feedback_btn" className="add_feedback_btn">Edit Feedback</button>
+					</Link> : <button id="edit_feedback_btn" onClick={() => alert('You do not have permission to edit this post.')} className="add_feedback_btn">Edit Feedback</button>}
 			</div>
-			<FeedbackCollection title={title} detail={detail} category={category} upvotes={upvotes} comments={comments} id={id} >
-				<Link to={'/'}>
-					<span className={`material-symbols-outlined ${auth.currentUser.uid !== feedbackUid ? 'display_none' : null}`} onClick={deletingFeedback}>close</span>
-				</Link>
-			</FeedbackCollection>
+			<FeedbackCollection title={title} detail={detail} category={category} upvotes={upvotes} comments={comments} id={id}/>
 			<div id="comment_section">
 				<h2>{`${comments} Comments`}</h2>
 				{commentSection.map((elem, index) => <Comment key={index} commentUid={elem.data().commentUid} feedbackId={id} id={elem.id} name={elem.data().name} email={elem.data().mail} comment={elem.data().comment} photo={elem.data().photo}/>)}

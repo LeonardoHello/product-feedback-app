@@ -1,24 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from "../../redux/userSlice";
-import { updatefeedback } from '../../redux/feedbackSlice';
 import { show, close } from '../../redux/arrowSlice';
-import { auth, db, collection, deleteUser, onSnapshot, query, orderBy, where, limit } from '../../firebase';
+import { auth, deleteUser } from '../../firebase';
 import MenuCategories from './MenuCategories';
 import SortDropdown from './SortDropdown';
 import AddFeedbackBtn from '../global/AddFeedbackBtn';
 import FeedbackCollection from '../feedback/FeedbackCollection';
-import '../../css/home.css'
-import detective from "../../images/illustration-empty.svg"
+import detective from "../../images/illustration-empty.svg";
+import '../../css/home.css';
+import { TextContext } from '../../App';
 
-const Home = ({ categories, sortDropdownList }) => {
+const Home = ({ setCategory, sortBy, setSortBy}) => {
 	const dispatch = useDispatch();
 	const feedback = useSelector((state) => state.feedback.value);
 	const arrowIcon = useSelector((state) => state.arrow.value);
+	const categories = useContext(TextContext).categories;
+	const sortDropdownList = useContext(TextContext).sortDropdownList;
 	const [menuIcon, setMenuIcon] = useState('menu');
-	const [category, setCategory] = useState('All');
-	const [sortBy, setSortBy] = useState(sortDropdownList[0]);
-	
+
 	useEffect(() => {
 		[...document.querySelectorAll('.dropdown > *')].map(elem => {
 			if (elem.querySelector('p').innerText === sortBy) {
@@ -29,19 +29,8 @@ const Home = ({ categories, sortDropdownList }) => {
 				elem.querySelector('span').classList.add('display_none');
 			}
 		});
-
-		const q = query(collection(db, 'feedback'), category !== 'All' ? where('category', '==', category) : limit(1000), sortBy.includes('Most') ? sortBy.includes('Upvotes') ? orderBy('upvotes', 'desc') : sortBy.includes('Comments') ? orderBy('comments', 'desc') : limit(1000) : sortBy.includes('Least') ? sortBy.includes('Upvotes') ? orderBy('upvotes') : sortBy.includes('Comments') ? orderBy('comments') : limit(1000) : null, sortBy === 'Least Recent' ? orderBy('date') : orderBy('date', 'desc'));
-		const unsub = onSnapshot(q, (snapshot) => dispatch(updatefeedback(snapshot.docs.map(elem => ({
-			id: elem.id,
-			title: elem.data().title,
-			detail: elem.data().detail,
-			category: elem.data().category,
-			upvotes: elem.data().upvotes.length,
-			comments: elem.data().comments,
-			feedbackUid: elem.data().feedbackUid
-		}))))) 
-		return unsub;
-	}, [sortBy, category]);
+	}, [sortBy])
+	
 
 	useEffect(() => {
 		if (menuIcon === 'close') {
@@ -120,7 +109,7 @@ const Home = ({ categories, sortDropdownList }) => {
 				<div id='feedback_collection' onClick={() => dispatch(close())}>
 					{feedback.length !== 0 ? feedback.map((elem, index) => <FeedbackCollection key={index} title={elem.title} detail={elem.detail} category={elem.category} upvotes={elem.upvotes} comments={elem.comments} id={elem.id}/>) : 
 					<div id='empty_collection' className='feedback'>
-						<img src={detective} />
+						<img src={detective}/>
 						<div>
 							<h2>There is no feedback yet.</h2>
 							<p>Got a suggestion? Found a bug that needs to be squashed? We love hearing about new ideas to improve our app.</p>

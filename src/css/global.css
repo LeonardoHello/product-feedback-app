@@ -43,7 +43,7 @@ ul, #feedback_categories, #create_feedback > form dl, #create_feedback > form, s
 }
 
 section input, textarea, #input {
-	padding: 1.5rem;
+	padding: 1.5rem 2rem;
 	color: #3a4374;
 	font-family: 'Jost', sans-serif;
 	min-height: 5rem;
@@ -158,4 +158,16 @@ li {
 
 .purple_border_bottom {
 	border-bottom: 1px solid #AD1FEA;
+}
+
+.background_color_gray {
+	background-color: #f2f4ff88;
+}
+
+.background_color_light_purple {
+	background-color: #b746e7;
+}
+
+.background_color_red {
+	background-color: #d73737;
 }
